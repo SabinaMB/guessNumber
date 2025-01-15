@@ -10,7 +10,7 @@ const initGame = function () {
   displayMessage("Start guessing a number between 1 and 20!");
   displayScore(score);
   document.querySelector(".guess").value = "";
-  document.querySelector("body").style.backgroundColor = "#222";
+  // document.querySelector("body").style.backgroundColor = "#130815";
   document.querySelector(".number").style.width = "15rem";
 };
 

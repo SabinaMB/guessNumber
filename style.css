@@ -6,9 +6,17 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: "Inter", sans-serif;
-  background: rgb(184, 104, 104);
+  /* background: #130815; */
+  /* background: #1a1a1a; */
+  /* background: #1d2a44; */
+  background: #2f3b52;
+
   color: #333;
   display: flex;
   justify-content: center;
@@ -22,12 +30,15 @@ body {
   border-radius: 2rem;
   padding: 3rem;
   width: 50%;
-  min-height: 80%;
+  max-width: 90%;
+  min-height: 50vh;
+  max-height: 80vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
+  /* flex-grow: 1; */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   animation: fadeIn 0.8s ease-in-out;
   gap: 2rem;
