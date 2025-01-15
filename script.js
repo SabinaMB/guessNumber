@@ -7,7 +7,7 @@ const initGame = function () {
   score = 20;
   highScore = 0;
   document.querySelector(".number").textContent = "❓";
-  displayMessage("Start guessing...");
+  displayMessage("Start guessing a number between 1 and 20!");
   displayScore(score);
   document.querySelector(".guess").value = "";
   document.querySelector("body").style.backgroundColor = "#222";
@@ -26,7 +26,7 @@ document.querySelector(".check").addEventListener("click", function () {
   const guess = Number(document.querySelector(".guess").value);
 
   if (!guess) {
-    displayMessage("⛔ No number!");
+    displayMessage("⛔ Add a number between 1 and 20!");
     return;
   }
 

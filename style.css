@@ -1,119 +1,184 @@
-@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
-}
-
-html {
-  font-size: 62.5%;
   box-sizing: border-box;
 }
 
+/* html {
+  font-size: 80%;
+} */
+
 body {
-  font-family: "Press Start 2P", sans-serif;
-  color: #eee;
-  background-color: #222;
-  /* background-color: #60b347; */
-}
-
-/* LAYOUT */
-header {
-  position: relative;
-  height: 35vh;
-  border-bottom: 7px solid #eee;
-}
-
-main {
-  height: 65vh;
-  color: #eee;
+  font-family: "Inter", sans-serif;
+  background: #333;
+  color: #333;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-around;
+  height: 100vh;
+  margin: 0;
 }
 
-.left {
-  width: 52rem;
+.card {
+  background: #f9f4ef;
+  border-radius: 2rem;
+  padding: 3rem 4rem;
+  width: 50%;
+  min-height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease-in-out;
+  gap: 2rem;
+}
+
+header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 2rem;
 }
 
-.right {
-  width: 52rem;
-  font-size: 2rem;
-}
-
-/* ELEMENTS STYLE */
-h1 {
-  font-size: 4rem;
-  text-align: center;
-  position: absolute;
-  width: 100%;
-  top: 52%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+/* h1 {
+  font-size: 3rem;
+  color: #555;
+  letter-spacing: 0.1rem;
+} */
 
 .number {
-  background: #eee;
+  margin: 1rem auto;
+  background: #e0e0e0;
   color: #333;
-  font-size: 6rem;
-  width: 15rem;
-  padding: 3rem 0rem;
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 50%);
-}
-
-.between {
-  font-size: 1.4rem;
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-}
-
-.again {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-}
-
-.guess {
-  background: none;
-  border: 4px solid #eee;
-  font-family: inherit;
-  color: inherit;
-  font-size: 5rem;
-  padding: 2.5rem;
-  width: 25rem;
-  text-align: center;
-  display: block;
-  margin-bottom: 3rem;
-}
-
-.btn {
-  border: none;
-  background-color: #eee;
-  color: #222;
-  font-size: 2rem;
-  font-family: inherit;
-  padding: 2rem 3rem;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background-color: #ccc;
+  font-size: 4rem;
+  width: 6rem;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid #aaa;
+  animation: pulse 1.5s infinite ease-in-out;
 }
 
 .message {
-  margin-bottom: 8rem;
-  height: 3rem;
+  font-size: 1.8rem;
+  color: #666;
 }
 
-.label-score {
-  margin-bottom: 2rem;
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.guess {
+  width: 80%;
+  padding: 1rem;
+  font-size: 1.6rem;
+  border: 2px solid #ccc;
+  background: #f9f9f9;
+  color: #333;
+  border-radius: 1rem;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.guess:focus {
+  outline: none;
+  border-color: #888;
+  box-shadow: 0 0 8px rgba(136, 136, 136, 0.5);
+}
+
+.btn {
+  width: 80%;
+  padding: 1.5rem;
+  font-size: 1.6rem;
+  background: #888;
+  color: #fff;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #555;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px rgba(85, 85, 85, 0.3);
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.label-score,
+.label-highscore {
+  font-size: 1.8rem;
+  color: #444;
+}
+
+.label-score span,
+.label-highscore span {
+  color: #555;
+}
+
+footer {
+  margin-top: 2rem;
+}
+
+.again {
+  width: 80%;
+  padding: 1.5rem;
+  font-size: 1.6rem;
+  background: #e57373;
+  color: #fff;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.again:hover {
+  background: #d32f2f;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(211, 47, 47, 0.6);
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
