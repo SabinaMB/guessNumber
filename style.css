@@ -6,13 +6,9 @@
   box-sizing: border-box;
 }
 
-/* html {
-  font-size: 80%;
-} */
-
 body {
   font-family: "Inter", sans-serif;
-  background: #333;
+  background: rgb(184, 104, 104);
   color: #333;
   display: flex;
   justify-content: center;
@@ -24,12 +20,12 @@ body {
 .card {
   background: #f9f4ef;
   border-radius: 2rem;
-  padding: 3rem 4rem;
+  padding: 3rem;
   width: 50%;
   min-height: 80%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   text-align: center;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -44,18 +40,13 @@ header {
   gap: 2rem;
 }
 
-/* h1 {
-  font-size: 3rem;
-  color: #555;
-  letter-spacing: 0.1rem;
-} */
-
 .number {
   margin: 1rem auto;
   background: #e0e0e0;
   color: #333;
   font-size: 4rem;
-  width: 6rem;
+  font-weight: 600;
+  max-width: 6rem;
   height: 6rem;
   display: flex;
   justify-content: center;
@@ -67,7 +58,8 @@ header {
 
 .message {
   font-size: 1.8rem;
-  color: #666;
+  font-weight: 600;
+  color: #5f5e5e;
 }
 
 main {
@@ -78,7 +70,7 @@ main {
   width: 100%;
 }
 
-.left {
+.nrInput {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,7 +79,7 @@ main {
 }
 
 .guess {
-  width: 80%;
+  width: 50%;
   padding: 1rem;
   font-size: 1.6rem;
   border: 2px solid #ccc;
@@ -105,7 +97,7 @@ main {
 }
 
 .btn {
-  width: 80%;
+  width: 50%;
   padding: 1.5rem;
   font-size: 1.6rem;
   background: #888;
@@ -122,7 +114,7 @@ main {
   box-shadow: 0 12px 20px rgba(85, 85, 85, 0.3);
 }
 
-.right {
+.labelScores {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -132,12 +124,12 @@ main {
 .label-score,
 .label-highscore {
   font-size: 1.8rem;
-  color: #444;
+  color: #5f5e5e;
 }
 
 .label-score span,
 .label-highscore span {
-  color: #555;
+  color: #5f5e5e;
 }
 
 footer {
@@ -145,7 +137,7 @@ footer {
 }
 
 .again {
-  width: 80%;
+  width: 100%;
   padding: 1.5rem;
   font-size: 1.6rem;
   background: #e57373;
