@@ -9,7 +9,7 @@ const initGame = function () {
   document.querySelector(".number").textContent = "❓";
   displayScore(score);
   document.querySelector(".guess").value = "";
-  // document.querySelector("body").style.backgroundColor = "#1a1a1a";
+  document.querySelector("body").style.backgroundColor = "#0d1b2a";
   displayMessage("");
   const guessField = document.querySelector(".guess");
   guessField.value = "";
@@ -39,7 +39,7 @@ document.querySelector(".check").addEventListener("click", function () {
   if (guess === secretNumber) {
     displayMessage("🥳 Correct number!");
     document.querySelector(".number").textContent = secretNumber;
-    document.querySelector("body").style.backgroundColor = "#60b347";
+    document.querySelector("body").style.backgroundColor = "#2ecc71";
     document.querySelector(".number").style.width = "30rem";
 
     if (score > highScore) {
