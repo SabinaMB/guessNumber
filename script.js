@@ -7,12 +7,18 @@ const initGame = function () {
   score = 20;
   highScore = 0;
   document.querySelector(".number").textContent = "❓";
-  displayMessage("Start guessing a number between 1 and 20!");
   displayScore(score);
   document.querySelector(".guess").value = "";
-  // document.querySelector("body").style.backgroundColor = "#130815";
-  document.querySelector(".number").style.width = "15rem";
+  // document.querySelector("body").style.backgroundColor = "#1a1a1a";
+  displayMessage("");
+  const guessField = document.querySelector(".guess");
+  guessField.value = "";
+  guessField.placeholder = "Type a number";
 };
+
+document.querySelector(".guess").addEventListener("focus", function () {
+  this.placeholder = "";
+});
 
 const displayMessage = function (message) {
   document.querySelector(".message").textContent = message;
@@ -26,7 +32,7 @@ document.querySelector(".check").addEventListener("click", function () {
   const guess = Number(document.querySelector(".guess").value);
 
   if (!guess) {
-    displayMessage("⛔ Add a number between 1 and 20!");
+    displayMessage("⚠️ Add a number between 1 and 20!");
     return;
   }
 
@@ -42,7 +48,7 @@ document.querySelector(".check").addEventListener("click", function () {
     }
   } else {
     if (score > 1) {
-      displayMessage(guess > secretNumber ? "⤴️ Too high!" : "⤵️ Too low");
+      displayMessage(guess > secretNumber ? "⬆️ Too high!" : "⬇️ Too low!");
       score--;
       displayScore(score);
     } else {
