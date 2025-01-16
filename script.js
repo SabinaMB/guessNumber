@@ -38,6 +38,19 @@ function triggerConfetti() {
   });
 }
 
+function loseGame() {
+  const card = document.querySelector(".card");
+  const message = document.querySelector(".message");
+
+  card.classList.add("lost");
+  message.classList.add("lost");
+
+  setTimeout(() => {
+    card.classList.remove("lost");
+    message.classList.remove("lost");
+  }, 1500);
+}
+
 document.querySelector(".check").addEventListener("click", function () {
   const guess = Number(document.querySelector(".guess").value);
 
@@ -50,7 +63,6 @@ document.querySelector(".check").addEventListener("click", function () {
     displayMessage("🥳 Correct number!");
     document.querySelector(".number").textContent = secretNumber;
     document.querySelector("body").style.backgroundColor = "#2ecc71";
-    // document.querySelector(".number").style.width = "30rem";
     triggerConfetti();
 
     if (score > highScore) {
@@ -65,6 +77,7 @@ document.querySelector(".check").addEventListener("click", function () {
     } else {
       displayMessage("💥 You lost the game!");
       displayScore(0);
+      loseGame();
     }
   }
 });

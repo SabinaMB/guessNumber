@@ -6,10 +6,6 @@
   box-sizing: border-box;
 }
 
-/* html {
-  font-size: 100%;
-} */
-
 body {
   font-family: "Inter", sans-serif;
   background: #0d1b2a;
@@ -25,16 +21,13 @@ body {
   background: #162033;
   color: #f4f4f4;
   border-radius: 1rem;
-  padding: clamp(0.5rem, 1vw, 3rem);
-  /* padding: 1rem; */
+  padding: clamp(1rem, 1vw, 3rem);
+  margin: 2rem 0 2rem 0;
   width: 40%;
-  height: 95vh;
-  /* height: auto; */
-  /* min-height: 40vh; */
+  height: 90vh;
   overflow: auto;
   display: flex;
   flex-direction: column;
-  /* flex-grow: 0; */
   justify-content: space-between;
   align-items: center;
   text-align: center;
@@ -46,40 +39,39 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: clamp(0.5rem, 1vw, 3rem);
   gap: clamp(0.5rem, 0.5vw, 1rem);
-  margin-bottom: 1rem;
 }
 
 .number {
   font-size: clamp(3rem, 4vw, 4rem);
   font-weight: 600;
-  /* width: 3rem;
-  height: 3rem; */
   color: #ff0000;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border-radius: 50%; */
   animation: pulse 1.5s infinite ease-in-out;
 }
 
 .title {
-  font-size: clamp(1.2rem, 1.2vw, 1.8rem);
+  font-size: clamp(1.4rem, 1.5vw, 1.6rem);
   font-weight: 600;
 }
 
 .message {
-  font-size: clamp(1.2rem, 1.2vw, 1.5rem);
+  font-size: clamp(1.3rem, 1.3vw, 1.5rem);
   font-weight: 600;
+  margin-bottom: clamp(0.5rem, 0.5vw, 1rem);
+
   color: #ff0000;
 }
 
 main {
   display: flex;
   flex-direction: column;
-  /* flex-grow: 1; */
+  padding: clamp(0.5rem, 1vw, 3rem);
   align-items: center;
-  /* gap: clamp(2rem, 3vw, 3rem); */
+  gap: clamp(2rem, 3vw, 3rem);
   width: 100%;
 }
 
@@ -88,7 +80,6 @@ main {
   flex-direction: column;
   align-items: center;
   gap: clamp(0.5rem, 0.5vw, 1rem);
-  width: 100%;
 }
 
 .guess {
@@ -118,7 +109,6 @@ input::placeholder {
   width: 8rem;
   padding: clamp(0.5rem, 0.5vw, 1rem);
   font-size: clamp(1.3rem, 1.3vw, 1.5rem);
-  /* font-weight: 600; */
   background: #d4deeb;
   color: #0d1b2a;
   border: none;
@@ -138,9 +128,8 @@ input::placeholder {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-items: center;
   gap: clamp(0.5rem, 0.5vw, 1rem);
-  /* padding: 1rem; */
-  margin-top: 2rem;
 }
 
 .label-score,
@@ -154,7 +143,7 @@ input::placeholder {
 }
 
 footer {
-  margin: 1rem;
+  padding: clamp(0.5rem, 1vw, 3rem);
 }
 
 .again {
@@ -203,8 +192,45 @@ footer {
   animation: fadeInScale 1s ease-out;
 }
 
+@keyframes flashRed {
+  0% {
+    background-color: #162033;
+  }
+  50% {
+    background-color: #ff0000;
+  }
+  100% {
+    background-color: #162033;
+  }
+}
+
+.card.lost {
+  animation: flashRed 1s ease-in-out, fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
 @media screen and (max-width: 500px) {
   .card {
-    width: 95%;
+    width: 80%;
+    height: 95vh;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 768px) {
+  .card {
+    width: 70%;
+    height: 80vh;
+  }
+}
+
+@media screen and (min-width: 770px) {
+  .card {
+    width: 30%;
+    height: 80vh;
   }
 }
