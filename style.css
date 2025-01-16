@@ -6,9 +6,9 @@
   box-sizing: border-box;
 }
 
-html {
+/* html {
   font-size: 100%;
-}
+} */
 
 body {
   font-family: "Inter", sans-serif;
@@ -25,8 +25,8 @@ body {
   background: #162033;
   color: #f4f4f4;
   border-radius: 1rem;
-  /* padding: clamp(1rem, 1vw, 3rem); */
-  padding: 1rem;
+  padding: clamp(0.5rem, 1vw, 3rem);
+  /* padding: 1rem; */
   width: 40%;
   height: 95vh;
   /* height: auto; */
@@ -34,11 +34,11 @@ body {
   overflow: auto;
   display: flex;
   flex-direction: column;
-  flex-grow: 0;
+  /* flex-grow: 0; */
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  gap: 1rem;
+  gap: clamp(0.5rem, 0.5vw, 1rem);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
 }
 
@@ -46,7 +46,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: clamp(0.5rem, 0.5vw, 1rem);
   margin-bottom: 1rem;
 }
 
@@ -64,12 +64,12 @@ header {
 }
 
 .title {
-  font-size: clamp(1.5rem, 1.5vw, 1.8rem);
+  font-size: clamp(1.2rem, 1.2vw, 1.8rem);
   font-weight: 600;
 }
 
 .message {
-  font-size: clamp(1.3rem, 1.5vw, 1.5rem);
+  font-size: clamp(1.2rem, 1.2vw, 1.5rem);
   font-weight: 600;
   color: #ff0000;
 }
@@ -87,14 +87,14 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: clamp(0.5rem, 0.5vw, 1rem);
   width: 100%;
 }
 
 .guess {
   width: clamp(12rem, 12vw, 14rem);
-  padding: 1rem;
-  font-size: clamp(1.2rem, 1.2vw, 1.4rem);
+  padding: clamp(0.5rem, 0.5vw, 1rem);
+  font-size: clamp(1.3rem, 1.3vw, 1.5rem);
   font-weight: 600;
   border: none;
   background: #d4deeb;
@@ -116,8 +116,8 @@ input::placeholder {
 
 .btn {
   width: 8rem;
-  padding: 0.5rem;
-  font-size: clamp(1.2rem, 1.2vw, 1.4rem);
+  padding: clamp(0.5rem, 0.5vw, 1rem);
+  font-size: clamp(1.3rem, 1.3vw, 1.5rem);
   /* font-weight: 600; */
   background: #d4deeb;
   color: #0d1b2a;
@@ -138,9 +138,9 @@ input::placeholder {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  margin-top: 1.5rem;
+  gap: clamp(0.5rem, 0.5vw, 1rem);
+  /* padding: 1rem; */
+  margin-top: 2rem;
 }
 
 .label-score,
@@ -203,14 +203,8 @@ footer {
   animation: fadeInScale 1s ease-out;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 500px) {
   .card {
-    width: 0%;
-  }
-}
-
-@media screen and (min-width: 426) and (max-width: 1024px) {
-  .card {
-    width: 60%;
+    width: 95%;
   }
 }
