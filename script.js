@@ -50,7 +50,7 @@ document.querySelector(".check").addEventListener("click", function () {
     displayMessage("🥳 Correct number!");
     document.querySelector(".number").textContent = secretNumber;
     document.querySelector("body").style.backgroundColor = "#2ecc71";
-    document.querySelector(".number").style.width = "30rem";
+    // document.querySelector(".number").style.width = "30rem";
     triggerConfetti();
 
     if (score > highScore) {
