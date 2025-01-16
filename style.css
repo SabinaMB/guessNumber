@@ -217,7 +217,7 @@ footer {
 @media screen and (max-width: 500px) {
   .card {
     width: 80%;
-    height: 95vh;
+    height: 80vh;
     margin-bottom: 1.5rem;
   }
 }
