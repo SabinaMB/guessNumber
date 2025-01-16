@@ -28,6 +28,15 @@ const displayScore = function (score) {
   document.querySelector(".score").textContent = score;
 };
 
+function triggerConfetti() {
+  confetti({
+    particleCount: 100, // Number of particles
+    spread: 70, // How wide the confetti spreads
+    origin: { y: 0.6 }, // Where the confetti originates from
+    colors: ["#ff0000", "#ff9800", "#ffeb3b", "#4caf50", "#2196f3"], // Set confetti colors
+  });
+}
+
 document.querySelector(".check").addEventListener("click", function () {
   const guess = Number(document.querySelector(".guess").value);
 
@@ -41,6 +50,7 @@ document.querySelector(".check").addEventListener("click", function () {
     document.querySelector(".number").textContent = secretNumber;
     document.querySelector("body").style.backgroundColor = "#2ecc71";
     document.querySelector(".number").style.width = "30rem";
+    triggerConfetti();
 
     if (score > highScore) {
       highScore = score;
