@@ -218,6 +218,7 @@ footer {
   .card {
     width: 80%;
     height: 95vh;
+    padding: 0.5rem;
   }
 }
 
@@ -228,7 +229,7 @@ footer {
   }
 }
 
-@media screen and (min-width: 770px) {
+@media screen and (min-width: 1500px) {
   .card {
     width: 30%;
     height: 80vh;
