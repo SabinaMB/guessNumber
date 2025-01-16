@@ -1,11 +1,12 @@
 "use strict";
 
-let secretNumber, score, highScore;
+let secretNumber,
+  score,
+  highScore = 0;
 
 const initGame = function () {
   secretNumber = Math.trunc(Math.random() * 20) + 1;
   score = 20;
-  highScore = 0;
   document.querySelector(".number").textContent = "❓";
   displayScore(score);
   document.querySelector(".guess").value = "";
@@ -30,10 +31,10 @@ const displayScore = function (score) {
 
 function triggerConfetti() {
   confetti({
-    particleCount: 100, // Number of particles
-    spread: 70, // How wide the confetti spreads
-    origin: { y: 0.6 }, // Where the confetti originates from
-    colors: ["#ff0000", "#ff9800", "#ffeb3b", "#4caf50", "#2196f3"], // Set confetti colors
+    particleCount: 100,
+    spread: 70,
+    origin: { y: 0.6 },
+    colors: ["#ff0000", "#ff9800", "#ffeb3b", "#4caf50", "#2196f3"],
   });
 }
 
@@ -68,6 +69,11 @@ document.querySelector(".check").addEventListener("click", function () {
   }
 });
 
-document.querySelector(".again").addEventListener("click", initGame);
+document.querySelector(".again").addEventListener("click", function () {
+  initGame();
+  document.querySelector(".highscore").textContent = highScore;
+});
+
+document.querySelector(".highscore").textContent = highScore;
 
 initGame();
