@@ -8,7 +8,7 @@
 
 body {
   font-family: "Inter", sans-serif;
-  background: #0d1b2a;
+  background: #162033;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -218,7 +218,7 @@ footer {
   .card {
     width: 80%;
     height: 80vh;
-    margin-bottom: 1.5rem;
+    margin: 2rem 0 4rem 0;
   }
 }
 
