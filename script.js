@@ -10,7 +10,7 @@ const initGame = function () {
   document.querySelector(".number").textContent = "❓";
   displayScore(score);
   document.querySelector(".guess").value = "";
-  document.querySelector("body").style.backgroundColor = "#0d1b2a";
+  document.querySelector("body").style.backgroundColor = "#162033";
   displayMessage("");
   const guessField = document.querySelector(".guess");
   guessField.value = "";
