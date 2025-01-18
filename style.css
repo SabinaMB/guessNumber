@@ -18,7 +18,9 @@ body {
 }
 
 .card {
-  background: #162033;
+  /* background: #162033; */
+  /* background: #241633; */
+  background: #4b1248;
   color: #f4f4f4;
   border-radius: 1rem;
   padding: clamp(1rem, 1vw, 3rem);
