@@ -4,17 +4,20 @@ let secretNumber,
   score,
   highScore = 0;
 
+const numberElement = document.querySelector(".number");
+const messageElement = document.querySelector(".message");
+const guessField = document.querySelector(".guess");
+const highScoreElement = document.querySelector(".highscore");
+
 const initGame = function () {
   secretNumber = Math.trunc(Math.random() * 20) + 1;
   score = 20;
-  document.querySelector(".number").textContent = "❓";
+  numberElement.textContent = "❓";
   displayScore(score);
-  document.querySelector(".guess").value = "";
-  document.querySelector("body").style.backgroundColor = "#301934";
-  displayMessage("");
-  const guessField = document.querySelector(".guess");
   guessField.value = "";
   guessField.placeholder = "Type a number";
+  document.querySelector("body").style.backgroundColor = "#301934";
+  displayMessage("");
 };
 
 document.querySelector(".guess").addEventListener("focus", function () {
@@ -22,7 +25,7 @@ document.querySelector(".guess").addEventListener("focus", function () {
 });
 
 const displayMessage = function (message) {
-  document.querySelector(".message").textContent = message;
+  messageElement.textContent = message;
 };
 
 const displayScore = function (score) {
@@ -51,8 +54,13 @@ function loseGame() {
   }, 1500);
 }
 
+function flashEffect(element, duration = 3000) {
+  element.classList.add("flash");
+  setTimeout(() => element.classList.remove("flash"), duration);
+}
+
 document.querySelector(".check").addEventListener("click", function () {
-  const guess = Number(document.querySelector(".guess").value);
+  const guess = Number(guessField.value);
 
   if (!guess) {
     displayMessage("⚠️ Add a number between 1 and 20!");
@@ -61,17 +69,12 @@ document.querySelector(".check").addEventListener("click", function () {
 
   if (guess === secretNumber) {
     displayMessage("🥳 Correct number!");
-    document.querySelector(".number").textContent = secretNumber;
+    numberElement.textContent = secretNumber;
     document.querySelector("body").style.backgroundColor = "#a8e063";
     triggerConfetti();
 
-    const numberElement = document.querySelector(".number");
-    numberElement.classList.add("flash");
-    setTimeout(() => numberElement.classList.remove("flash"), 4000);
-
-    const messageElement = document.querySelector(".message");
-    messageElement.classList.add("flash");
-    setTimeout(() => messageElement.classList.remove("flash"), 4000);
+    flashEffect(numberElement);
+    flashEffect(messageElement);
 
     if (score > highScore) {
       highScore = score;
@@ -92,9 +95,9 @@ document.querySelector(".check").addEventListener("click", function () {
 
 document.querySelector(".again").addEventListener("click", function () {
   initGame();
-  document.querySelector(".highscore").textContent = highScore;
+  highScoreElement.textContent = highScore;
 });
 
-document.querySelector(".highscore").textContent = highScore;
+highScoreElement.textContent = highScore;
 
 initGame();
