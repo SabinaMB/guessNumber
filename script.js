@@ -65,6 +65,14 @@ document.querySelector(".check").addEventListener("click", function () {
     document.querySelector("body").style.backgroundColor = "#a8e063";
     triggerConfetti();
 
+    const numberElement = document.querySelector(".number");
+    numberElement.classList.add("flash");
+    setTimeout(() => numberElement.classList.remove("flash"), 4000);
+
+    const messageElement = document.querySelector(".message");
+    messageElement.classList.add("flash");
+    setTimeout(() => messageElement.classList.remove("flash"), 4000);
+
     if (score > highScore) {
       highScore = score;
       document.querySelector(".highscore").textContent = highScore;

@@ -190,6 +190,10 @@ footer {
   }
 }
 
+.flash {
+  animation: pulse 0.5s infinite ease-in-out;
+}
+
 .card {
   animation: fadeInScale 1s ease-out;
 }
