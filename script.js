@@ -63,7 +63,7 @@ document.querySelector(".check").addEventListener("click", function () {
   const guess = Number(guessField.value);
 
   if (!guess) {
-    displayMessage("⚠️ Add a number between 1 and 20!");
+    displayMessage("⚠️ Add a number!");
     return;
   }
 
